@@ -74,8 +74,8 @@ namespace('db', function() {
         'id SERIAL PRIMARY KEY, ' +
         'consumetime TIMESTAMP DEFAULT current_timestamp, ' +
         'consumer_id SERIAL REFERENCES consumers (id), ' +
-        'drink_id SERIAL REFERENCES drinks (id)), '+
-        'payment INTEGER not null DEFAULT 0',
+        'drink_id SERIAL REFERENCES drinks (id), '+
+        'payment INTEGER not null DEFAULT 0)',
         function(err) {
           if(err) {
             return console.error('error creating consumptions table', err);
