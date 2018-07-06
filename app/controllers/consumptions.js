@@ -133,7 +133,7 @@ module.exports = function(pg, persistence, consumerPersistence, consumptionsPers
           if(!consumer || consumer == undefined) {
             return;
           }
-          if (consumer.ledger < drink.discountprice) {
+          if (parseInt(process.env.ICEBOX_API_MAXDISPO || 0, 10) + consumer.ledger < drink.discountprice) {
             done();
             res.status(402);
             res.json({
