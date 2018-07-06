@@ -137,7 +137,7 @@ module.exports = function(pg, persistence, consumerPersistence, consumptionsPers
             done();
             res.status(402);
             res.json({
-              message: 'Insfficient Funds'
+              message: 'Insufficient Funds'
             });
           } else {
             consumeDrinkIfAvaliable(res, barcode, username, false);
