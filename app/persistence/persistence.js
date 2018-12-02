@@ -7,7 +7,7 @@ var iceboxhost = process.env.ICEBOX_DB_HOST || 'localhost';
 var iceboxport = process.env.ICEBOX_DB_PORT || 5432;
 
 var connectionString = process.env.ICEBOX_DB_URL ||
-  `postgres://${iceboxuser}:${iceboxpsw}@${iceboxhost}:${iceboxport}/${iceboxname}`;
+  ( `postgres://` + encodeURIComponent(iceboxuser) +`:`+ encodeURIComponent(iceboxpsw) + `@` + encodeURIComponent(iceboxhost) + `:` + encodeURIComponent(iceboxport) + `/` + encodeURIComponent(iceboxname) );
 
 pg.defaults.poolSize = 20;
 
