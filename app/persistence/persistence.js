@@ -2,9 +2,9 @@ var pg = require('pg');
 
 var iceboxuser = process.env.ICEBOX_DB_USER || 'iceboxuser';
 var iceboxpsw = process.env.ICEBOX_DB_PSW || 'testForIce';
-var iceboxname = process.env.ICEBOX_DB_NAME || 'icobox';
-var iceboxhost = process.env.ICEBOX_DB_HOST || 'localhost';
-var iceboxport = process.env.ICEBOX_DB_PORT || 5432;
+var iceboxname = process.env.ICEBOX_DB_NAME || 'icobox';
+var iceboxhost = process.env.ICEBOX_DB_HOST || 'localhost';
+var iceboxport = process.env.ICEBOX_DB_PORT || 5432;
 
 var connectionString = process.env.ICEBOX_DB_URL ||
   ( `postgres://` + encodeURIComponent(iceboxuser) +`:`+ encodeURIComponent(iceboxpsw) + `@` + encodeURIComponent(iceboxhost) + `:` + encodeURIComponent(iceboxport) + `/` + encodeURIComponent(iceboxname) );

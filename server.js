@@ -5,8 +5,8 @@ var ip = require('ip');
 
 var app = require('./app');
 
-var name = process.env.NAME || "IceBox";
-var port = process.env.PORT || 8081;
+var name = process.env.ICEBOX_API_NAME || "IceBox";
+var port = process.env.ICEBOX_API_PORT || 8081;
 
 app.listen(port, function () {
   var host = app.address;
