@@ -5,15 +5,15 @@ var ip = require('ip');
 
 var app = require('./app');
 
-
+var name = process.env.NAME || "IceBox";
 var port = process.env.PORT || 8081;
 
 app.listen(port, function () {
   var host = app.address;
 
   bonjour.publish({
-    name: 'IceBox',
-    type: 'http',
+    name: name,
+    type: 'icebox',
     host: ip.address(),
     port: port
   });
